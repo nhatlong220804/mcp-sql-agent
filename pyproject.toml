@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-sql-agent"
+version = "0.1.0"
+description = "MCP server that exposes a SQLite database to an LLM as safe, typed tools, with a retrieval layer for policy documents."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "mcp>=2.0",
+]
+
+[project.scripts]
+mcp-sql-agent = "mcp_sql_agent.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
